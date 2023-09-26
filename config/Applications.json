@@ -1,0 +1,61 @@
+{
+    "Applications":[
+        {
+            "id":"930",
+            "type": "simple",
+            "window":"5m",
+            "aggregation":"avg",
+            "formula":"%{traffic}+%{latency}+%{errors}+%{saturation}",
+            "silent":[
+                {
+                    "day":"*",
+                    "start": "00:00:00",
+                    "end": "08:00:00"
+                },
+                {
+                    "day":"*",
+                    "start": "21:00:00",
+                    "end": "23:59:50"
+                },
+                {
+                    "day":"saturday",
+                    "start": "00:00:00",
+                    "end": "23:59:59"
+                },
+                {
+                    "day":"sunday",
+                    "start": "00:00:00",
+                    "end": "23:59:59"
+                }
+            ],
+            "schedule": "1m",
+            "data-center":"join",
+            "indicators":[
+                {
+                    "name":"traffic",
+                    "type":"traffic",
+                    "formula": "",
+                    "query": "",
+                    "url": "",
+                    "datasource": "",
+                    "intervals":[
+                        {
+                            "threshold" :0,
+                            "value":1
+                        },
+                        {
+                            "threshold" :1000,
+                            "value":0
+                        }
+                    ],
+                    "weight": "20"
+                }
+            ]
+
+        },
+        {
+
+        }
+    ]
+    
+}
