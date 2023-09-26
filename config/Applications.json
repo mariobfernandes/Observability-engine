@@ -2,18 +2,18 @@
     "Applications":[
         {
             "id":"930",
-            "type": "simple",
+            "type": "Simple",
             "window":"5m",
             "aggregation":"avg",
             "formula":"%{traffic}+%{latency}+%{errors}+%{saturation}",
             "silent":[
                 {
-                    "day":"*",
+                    "day":"any",
                     "start": "00:00:00",
                     "end": "08:00:00"
                 },
                 {
-                    "day":"*",
+                    "day":"any",
                     "start": "21:00:00",
                     "end": "23:59:50"
                 },
@@ -29,21 +29,21 @@
                 }
             ],
             "schedule": "1m",
-            "data-center":"join",
+            "dataCenterMode":"joined",
             "indicators":[
                 {
                     "name":"traffic",
                     "type":"traffic",
-                    "formula": "",
-                    "query": "",
-                    "url": "",
-                    "datasource": "",
+                    "formula": "my formula=x+y+z",
+                    "query": "{some json query}",
+                    "url": "http://xpto.elastic.co",
+                    "datasource": "elastic",
                     "intervals":[
-                        {
+                        {                            
                             "threshold" :0,
                             "value":1
                         },
-                        {
+                        {                         
                             "threshold" :1000,
                             "value":0
                         }
@@ -51,10 +51,6 @@
                     "weight": "20"
                 }
             ]
-
-        },
-        {
-
         }
     ]
     
