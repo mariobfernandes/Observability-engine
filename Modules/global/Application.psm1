@@ -33,6 +33,8 @@
 #"indicators":[
 using module ".\SilentPeriod.psm1"
 using module ".\..\Indicators\Indicator.psm1"
+using module ".\..\Providers\Producer.psm1"
+using module ".\Levels.psm1"
 enum DataCenterMode {
     Joined
     Unique
@@ -51,6 +53,8 @@ Class Application{
     [String] $schedule
     [DataCenterMode] $dataCenterMode
     [Indicator[]] $indicators
+    [Producer] $producer
+    [Levels] $levels
     Application($item){
         $this.id=$item.id
         $this.type=[ApplicationType]$item.type
@@ -61,6 +65,7 @@ Class Application{
         $this.dataCenterMode=[DataCenterMode]$item.dataCenterMode     
         $item.silent.foreach({$this.silent+=[SilentPeriod]::new($_)})
         $item.indicators.foreach({$this.indicators+=[Indicator]::new($_)})
+        $this.levels=[Levels]::new($item.levels)
     }
 
 }

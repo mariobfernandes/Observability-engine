@@ -6,8 +6,8 @@ Class ConsumerFactory{
     static [Consumer] buildConsumer($config)   {
       $value=$null
         switch ( $config.dataSource) {
-          "elastic" { $value=  [ElasticSearchConsumer]::new($config.url,$config.query) }
-          "influx" { $value=  [InfluxDbConsumer]::new($config.url,$config.query) }
+          "elastic" { $value=  [ElasticSearchConsumer]::new($config) }
+          "influx" { $value=  [InfluxDbConsumer]::new($config) }
           Default { throw "Consumer Not Implemented"   }
         }
         return $value

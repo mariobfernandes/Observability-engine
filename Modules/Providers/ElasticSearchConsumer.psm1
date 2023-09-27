@@ -1,8 +1,11 @@
 using module ".\Consumer.psm1"
 
 Class ElasticSearchConsumer:Consumer{
-    ElasticSearchConsumer($purl,$pquery): base($purl,$pquery) {       
+    ElasticSearchConsumer($config): base($config) {       
         $this.type=[ConsumerType]::Elastic
     }
-    
+
+    #[PSCustomObject] query(){
+    #    #$response=Invoke-WebRequest 
+    #}         
 }

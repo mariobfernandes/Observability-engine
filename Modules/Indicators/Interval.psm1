@@ -1,6 +1,6 @@
 class Interval {
     [long] $threshold
-    [decimal] $value
+    [long] $value
     Interval($item){
         $this.threshold=$item.threshold
         $this.value=$item.value

@@ -5,7 +5,7 @@
 #        "start": "21:00:00",
 #        "end": "23:59:50"
 #    },
-enum SlientWeekDayType {
+enum SilentWeekDayType {
     Any
     BusinessDay
     Weekend
@@ -18,11 +18,11 @@ enum SlientWeekDayType {
     Saturday
 }
 Class SilentPeriod{
-    [SlientWeekDayType] $day
+    [SilentWeekDayType] $day
     [string] $start
     [string] $end
     SilentPeriod($item){
-        $this.day=[SlientWeekDayType] $item.day
+        $this.day=[SilentWeekDayType] $item.day
         $this.start=$item.start
         $this.end=$item.end
 

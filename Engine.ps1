@@ -17,11 +17,18 @@ class Engine {
         }
     }
     [void] run() {       
-
+         #avaliar proximas execuções já expiradas
+         #executar apenas estas
+            foreach ($application in $this.applications) {
+                foreach ($indicator in $application.indicators) {
+                    $indicator.provider.query()                    
+                }
+                #pedir à aplicação para aplicar a formula
+                #Persistir Informação ( Producer.persist())
+                #calcular proximas execuções
+                #persistir execuções
+        }
+        #reavaliar execuções pendentes
     }
     
 }
-
-$engine=[Engine]::new("C:\work\BPI\Team_SRE\VScode_projects\Observability\config\Applications.json")
-$engine.loadConfig()
-Write-Host ( $engine|ConvertTo-Json -Depth 100)

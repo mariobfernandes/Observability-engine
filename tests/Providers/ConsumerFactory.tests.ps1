@@ -1,11 +1,11 @@
 
 using module ".\..\..\Modules\Providers\Factory.psm1"
 using module ".\..\..\Modules\Providers\Consumer.psm1"
-using module ".\..\..\Modules\Indicators\IndicatorConfig.psm1"
+
 
 
 BeforeAll {
-    $config=[IndicatorConfig]::new()
+    $config=@{}
     $config.name="traffic"    
     $config.url="http://xpto.elastic.co:9200"
     $config.query="{data:bla bla bla}"

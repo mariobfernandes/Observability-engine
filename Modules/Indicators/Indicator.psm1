@@ -1,4 +1,4 @@
-using module ".\IndicatorConfig.psm1"
+
 using module ".\..\Providers\Consumer.psm1"
 using module ".\..\Providers\Factory.psm1"
 using module ".\Interval.psm1"

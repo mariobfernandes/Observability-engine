@@ -15,7 +15,7 @@
                 {
                     "day":"any",
                     "start": "21:00:00",
-                    "end": "23:59:50"
+                    "end": "23:59:59"
                 },
                 {
                     "day":"saturday",
@@ -34,23 +34,29 @@
                 {
                     "name":"traffic",
                     "type":"traffic",
-                    "formula": "my formula=x+y+z",
+                    "formula": "(avg(values))*treshold",
                     "query": "{some json query}",
-                    "url": "http://xpto.elastic.co",
+                    "url": "http://xpto.elastic.co/bpiin-pro-iis-*",
                     "datasource": "elastic",
                     "intervals":[
                         {                            
                             "threshold" :0,
-                            "value":1
+                            "value":0
                         },
                         {                         
                             "threshold" :1000,
-                            "value":0
+                            "value":1
                         }
                     ],
                     "weight": "20"
                 }
-            ]
+            ],
+            "levels":{
+				"unavailable":0,                
+				"critical":0.3,
+                "low":0.5,
+				"normal":0.8
+            }
         }
     ]
     
