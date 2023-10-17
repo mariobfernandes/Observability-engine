@@ -7,7 +7,7 @@ class Engine {
 
     Engine([String]$configFile){
         $this.configFilePath=$configFile
-        #$this.loadConfig()        
+        $this.loadConfig()        
     }    
 
     [void] loadConfig() {

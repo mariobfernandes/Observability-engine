@@ -5,7 +5,7 @@
             "type": "Simple",
             "window":"5m",
             "aggregation":"avg",
-            "formula":"%{traffic}+%{latency}+%{errors}+%{saturation}",
+            "formula":"%{traffic}+%{latency}+%{errors}+%{ }",
             "silent":[
                 {
                     "day":"any",
